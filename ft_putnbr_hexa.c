@@ -6,11 +6,10 @@
 /*   By: adbaich <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:59:36 by adbaich           #+#    #+#             */
-/*   Updated: 2021/11/23 13:01:05 by adbaich          ###   ########.fr       */
+/*   Updated: 2021/11/23 19:17:24 by adbaich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
+#include "ft_printf.h"
 
 static int	somme_hexa(unsigned int n)
 {

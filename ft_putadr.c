@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_bexa.c                                   :+:      :+:    :+:   */
+/*   ft_putadr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbaich <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 13:01:22 by adbaich           #+#    #+#             */
-/*   Updated: 2021/11/23 19:16:19 by adbaich          ###   ########.fr       */
+/*   Created: 2021/11/23 15:56:28 by adbaich           #+#    #+#             */
+/*   Updated: 2021/11/23 19:14:40 by adbaich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-static int	somme_bexa(unsigned int n)
+static int	somme_hexa(unsigned long n)
 {
 	int	a;
 
-	a = 1;
+	a = 3;
 	while ((n / 16) != 0)
 	{
 		n = n / 16;
@@ -24,15 +24,13 @@ static int	somme_bexa(unsigned int n)
 	return (a);
 }
 
-int	ft_putnbr_bexa(unsigned int n)
+static void	put_hexa(unsigned long n)
 {
 	char			c;
-	unsigned int	a;
 
-	a = n;
 	while ((n / 16) != 0)
 	{
-		ft_putnbr_bexa(n / 16);
+		put_hexa(n / 16);
 		n = n % 16;
 	}
 	if (n >= 0 && n <= 9)
@@ -43,17 +41,26 @@ int	ft_putnbr_bexa(unsigned int n)
 	else
 	{
 		if (n == 10)
-			write(1, "A", 1);
+			write(1, "a", 1);
 		if (n == 11)
-			write(1, "B", 1);
+			write(1, "b", 1);
 		if (n == 12)
-			write(1, "C", 1);
+			write(1, "c", 1);
 		if (n == 13)
-			write(1, "D", 1);
+			write(1, "d", 1);
 		if (n == 14)
-			write(1, "E", 1);
+			write(1, "e", 1);
 		if (n == 15)
-			write(1, "F", 1);
+			write(1, "f", 1);
 	}
-	return (somme_bexa(a));
+}
+
+int	ft_putadr(void *p)
+{
+	unsigned long	a;
+
+	a = (unsigned long)p;
+	write(1, "0x", 2);
+	put_hexa(a);
+	return (somme_hexa(a));
 }

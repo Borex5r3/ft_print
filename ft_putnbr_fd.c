@@ -6,17 +6,18 @@
 /*   By: adbaich <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 17:11:29 by adbaich           #+#    #+#             */
-/*   Updated: 2021/11/22 19:19:07 by adbaich          ###   ########.fr       */
+/*   Updated: 2021/11/23 19:16:49 by adbaich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "ft_printf.h"
 
-#include <unistd.h>
-int	check(int n)
+static int	check(int n)
 {
 	int	s;
 	int	k;
 
 	s = 1;
+	k = n;
 	if (n < 0)
 	{
 		k = n * -1;

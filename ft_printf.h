@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbaich <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 11:16:26 by adbaich           #+#    #+#             */
-/*   Updated: 2021/11/23 19:15:42 by adbaich          ###   ########.fr       */
+/*   Created: 2021/11/23 18:16:59 by adbaich           #+#    #+#             */
+/*   Updated: 2021/11/23 19:27:17 by adbaich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_printf.h"
 
-static int	somme(unsigned int n)
-{
-	int	s;
+#ifndef FT_PRINTF_H
+#define FT_PRINTF_H
+#include <stdio.h>
+#include <unistd.h>
+#include <stdarg.h>
 
-	s = 1;
-	while ((n / 10) != 0)
-	{
-		n = n / 10;
-		s++;
-	}
-	return (s);
-}
+int	ft_putchar_fd(int a);
+int	ft_putstr_fd(char *p);
+int	ft_putnbr_fd(int c);
+int	ft_putnbr_base(unsigned int n);
+int	ft_putnbr_hexa(unsigned int n);
+int	ft_putnbr_bexa(unsigned int n);
+int	ft_putadr(void *p);
+int	ft_printf(const char *format, ...);
 
-int	ft_putnbr_base(unsigned int n)
-{
-	char	c;
 
-	if (n > 9)
-	{
-		ft_putnbr_base((n / 10));
-		ft_putnbr_base((n % 10));
-	}
-	else
-	{
-		c = n + 48;
-		write(1, &c, 1);
-	}
-	return (somme(n));
-}
+
+#endif

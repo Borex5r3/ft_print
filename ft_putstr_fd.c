@@ -6,10 +6,10 @@
 /*   By: adbaich <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 16:49:10 by adbaich           #+#    #+#             */
-/*   Updated: 2021/11/22 17:21:25 by adbaich          ###   ########.fr       */
+/*   Updated: 2021/11/23 19:17:54 by adbaich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+#include "ft_printf.h"
 
 int	ft_putstr_fd(char *p)
 {
@@ -21,5 +21,5 @@ int	ft_putstr_fd(char *p)
 		write(1, &p[i], 1);
 		i++;
 	}
-	return(i);
+	return (i);
 }

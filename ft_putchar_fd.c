@@ -6,10 +6,10 @@
 /*   By: adbaich <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 13:47:47 by adbaich           #+#    #+#             */
-/*   Updated: 2021/11/22 16:48:33 by adbaich          ###   ########.fr       */
+/*   Updated: 2021/11/23 19:14:59 by adbaich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+#include "ft_printf.h"
 
 int	ft_putchar_fd(int a)
 {
