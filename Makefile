@@ -6,7 +6,7 @@
 #    By: adbaich <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 18:25:03 by adbaich           #+#    #+#              #
-#    Updated: 2021/11/23 19:52:00 by adbaich          ###   ########.fr        #
+#    Updated: 2021/11/24 16:15:13 by adbaich          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,12 +34,11 @@ CC = gcc
 
 RM = rm -f
 
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 all: ${NAME}
 
-${NAME}:
-	${CC} ${FLAGS} -c ${SRCS}
+${NAME}: ${OBJS}
 	ar rc ${NAME} ${OBJS}
 
 clean:

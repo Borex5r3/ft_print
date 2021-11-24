@@ -6,7 +6,7 @@
 /*   By: adbaich <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:56:28 by adbaich           #+#    #+#             */
-/*   Updated: 2021/11/23 19:14:40 by adbaich          ###   ########.fr       */
+/*   Updated: 2021/11/24 16:37:12 by adbaich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -24,6 +24,22 @@ static int	somme_hexa(unsigned long n)
 	return (a);
 }
 
+static void	put_hexa2(unsigned long n)
+{
+	if (n == 10)
+		write(1, "a", 1);
+	if (n == 11)
+		write(1, "b", 1);
+	if (n == 12)
+		write(1, "c", 1);
+	if (n == 13)
+		write(1, "d", 1);
+	if (n == 14)
+		write(1, "e", 1);
+	if (n == 15)
+		write(1, "f", 1);
+}
+
 static void	put_hexa(unsigned long n)
 {
 	char			c;
@@ -39,20 +55,7 @@ static void	put_hexa(unsigned long n)
 		write(1, &c, 1);
 	}
 	else
-	{
-		if (n == 10)
-			write(1, "a", 1);
-		if (n == 11)
-			write(1, "b", 1);
-		if (n == 12)
-			write(1, "c", 1);
-		if (n == 13)
-			write(1, "d", 1);
-		if (n == 14)
-			write(1, "e", 1);
-		if (n == 15)
-			write(1, "f", 1);
-	}
+		put_hexa2(n);
 }
 
 int	ft_putadr(void *p)

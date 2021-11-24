@@ -6,7 +6,7 @@
 /*   By: adbaich <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 17:11:29 by adbaich           #+#    #+#             */
-/*   Updated: 2021/11/23 19:16:49 by adbaich          ###   ########.fr       */
+/*   Updated: 2021/11/24 16:33:34 by adbaich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -31,6 +31,14 @@ static int	check(int n)
 	return (s);
 }
 
+static int	min_int(int *n)
+{
+	write(1, "-", 1);
+	ft_putnbr_fd(2);
+	*n = 147483648;
+	return (2);
+}
+
 int	ft_putnbr_fd(int n)
 {
 	char	c;
@@ -38,13 +46,8 @@ int	ft_putnbr_fd(int n)
 
 	a = 0;
 	if (n == -2147483648)
-	{
-		write(1, "-", 1);
-		a++;
-		ft_putnbr_fd(2);
-		n = 147483648;
-	}
-	a = check(n);
+		a = min_int(&n);
+	a = a + check(n);
 	if (n < 0)
 	{
 		write(1, "-", 1);

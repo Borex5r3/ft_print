@@ -6,7 +6,7 @@
 /*   By: adbaich <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:59:36 by adbaich           #+#    #+#             */
-/*   Updated: 2021/11/23 19:17:24 by adbaich          ###   ########.fr       */
+/*   Updated: 2021/11/24 16:41:29 by adbaich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -22,6 +22,22 @@ static int	somme_hexa(unsigned int n)
 		a++;
 	}
 	return (a);
+}
+
+static void	put_hexa(unsigned int n)
+{
+	if (n == 10)
+		write(1, "a", 1);
+	if (n == 11)
+		write(1, "b", 1);
+	if (n == 12)
+		write(1, "c", 1);
+	if (n == 13)
+		write(1, "d", 1);
+	if (n == 14)
+		write(1, "e", 1);
+	if (n == 15)
+		write(1, "f", 1);
 }
 
 int	ft_putnbr_hexa(unsigned int n)
@@ -41,19 +57,6 @@ int	ft_putnbr_hexa(unsigned int n)
 		write(1, &c, 1);
 	}
 	else
-	{
-		if (n == 10)
-			write(1, "a", 1);
-		if (n == 11)
-			write(1, "b", 1);
-		if (n == 12)
-			write(1, "c", 1);
-		if (n == 13)
-			write(1, "d", 1);
-		if (n == 14)
-			write(1, "e", 1);
-		if (n == 15)
-			write(1, "f", 1);
-	}
+		put_hexa(n);
 	return (somme_hexa(a));
 }

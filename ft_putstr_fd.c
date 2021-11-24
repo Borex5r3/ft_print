@@ -6,7 +6,7 @@
 /*   By: adbaich <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 16:49:10 by adbaich           #+#    #+#             */
-/*   Updated: 2021/11/23 19:17:54 by adbaich          ###   ########.fr       */
+/*   Updated: 2021/11/24 12:39:35 by adbaich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -16,6 +16,8 @@ int	ft_putstr_fd(char *p)
 	int	i;
 
 	i = 0;
+	if (!p)
+		return (ft_putstr_fd("(null)"));
 	while (p[i])
 	{
 		write(1, &p[i], 1);
